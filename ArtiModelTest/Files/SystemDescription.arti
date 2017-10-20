@@ -1,0 +1,906 @@
+﻿{
+  "$Meta": {
+    "description": "Merged ARTI description",
+    "generator": "arti_merge.rb",
+    "date": "Mon Feb 06 14:12:45 +0000 2017",
+    "merge_sources": [
+      {
+        "origin": "C:/Users/led1yok/Desktop/AUTOSAR ORTI Dev/WorkflowDemo/Tools/../ARTI_Components/ADifferent.arti",
+        "schema": "URL_to_schema_version",
+        "description": "ARTI description for project 'Hello World'",
+        "generator": "ADifferent version 0.0.0",
+        "date": "Mon Feb 06 14:12:44 +0000 2017",
+        "includes": [
+          "ADifferent.h"
+        ],
+        "arxml_sources": [
+
+        ],
+        "code_sources": [
+
+        ]
+      },
+      {
+        "origin": "C:/Users/led1yok/Desktop/AUTOSAR ORTI Dev/WorkflowDemo/Tools/../ARTI_Components/AModule.arti",
+        "schema": "URL_to_schema_version",
+        "description": "ARTI description for project 'Hello World'",
+        "generator": "AModule version 0.0.0",
+        "date": "Mon Feb 06 14:12:44 +0000 2017",
+        "includes": [
+          "AModule.h"
+        ],
+        "arxml_sources": [
+
+        ],
+        "code_sources": [
+
+        ]
+      },
+      {
+        "origin": "C:/Users/led1yok/Desktop/AUTOSAR ORTI Dev/WorkflowDemo/Tools/../ARTI_Components/OS.arti",
+        "schema": "URL_to_schema_version",
+        "description": "ARTI description generated from 'HelloWorld'",
+        "generator": "os_artigen version 0.0.1 for RTA-OS",
+        "date": "Mon Feb 06 14:12:44 +0000 2017",
+        "includes": [
+          "Os_Arti.h"
+        ]
+      },
+      {
+        "origin": "C:/Users/led1yok/Desktop/AUTOSAR ORTI Dev/WorkflowDemo/Tools/../ARTI_Components/RTE.arti",
+        "schema": "URL_to_schema_version",
+        "description": "RTE fake wiper example",
+        "generator": "RTE version 0.0.0",
+        "date": "Mon Feb 06 14:12:45 +0000 2017",
+        "includes": [
+          "app.h"
+        ],
+        "arxml_sources": [
+
+        ],
+        "code_sources": [
+
+        ]
+      }
+    ]
+  },
+  "$Classes": {
+    "ADIFFERENT": {
+      "states": {
+        "RUNNINGBLOB": {
+          "description": "Running Blob",
+          "type": "map",
+          "values": {
+            "0": "NO_BLOB",
+            "10": "A_BLOB",
+            "20": "B_BLOB"
+          }
+        }
+      },
+      "events": {
+        "BLOB_START": {
+          "description": "Blob start",
+          "type": "map",
+          "values": {
+            "0": "A_BLOB",
+            "1": "B_BLOB"
+          }
+        },
+        "BLOB_STOP": {
+          "description": "Blob completion",
+          "type": "map",
+          "values": {
+            "0": "A_BLOB",
+            "1": "B_BLOB"
+          }
+        }
+      }
+    },
+    "AMODULE": {
+      "states": {
+        "RUNNINGTHING": {
+          "description": "Running Thing",
+          "type": "map",
+          "values": {
+            "0": "NO_THING",
+            "1": "A_THING",
+            "2": "ANOTHER_THING"
+          }
+        }
+      },
+      "events": {
+        "THING_START": {
+          "description": "Thing start",
+          "type": "map",
+          "values": {
+            "1": "A_THING",
+            "2": "ANOTHER_THING"
+          }
+        }
+      }
+    },
+    "AR_OS": {
+      "states": {
+        "CURRENTAPPMODE": {
+          "description": "AppMode",
+          "type": "map",
+          "values": {
+            "1": "OSDEFAULTAPPMODE",
+            "0": "NO_APPMODE"
+          }
+        }
+      },
+      "constants": {
+        "NumberOfCores": {
+          "description": "Number of cores used by OS",
+          "type": "unsigned integer"
+        }
+      },
+      "description": "This is (will be) the class specified by AUTOSAR to describe an AUTOSAR OS.\nThere will normally be one OS per ECU, but the OS will manage one or more AR_COREs.\n"
+    },
+    "AR_CORE": {
+      "states": {
+        "CURRENTAPPLICATION": {
+          "description": "Application",
+          "type": "map",
+          "values": {
+            "1": "Application0",
+            "2": "Application1",
+            "0": "NO_APPLICATION"
+          }
+        },
+        "LASTERROR": {
+          "description": "Application",
+          "type": "map",
+          "values": {
+            "1": "E_OS_ACCESS",
+            "2": "E_OS_CALLEVEL",
+            "3": "E_OS_ID",
+            "4": "E_OS_LIMIT",
+            "5": "E_OS_NOFUNC",
+            "6": "E_OS_RESOURCE",
+            "7": "E_OS_STATE",
+            "8": "E_OS_VALUE",
+            "9": "E_OS_SERVICEID",
+            "10": "E_OS_ILLEGAL_ADDRESS",
+            "11": "E_OS_MISSINGEND",
+            "12": "E_OS_DISABLEDINT",
+            "13": "E_OS_STACKFAULT",
+            "14": "E_OS_PROTECTION_MEMORY",
+            "15": "E_OS_PROTECTION_TIME",
+            "16": "E_OS_PROTECTION_ARRIVAL",
+            "17": "E_OS_PROTECTION_LOCKED",
+            "18": "E_OS_PROTECTION_EXCEPTION",
+            "19": "E_OS_CORE",
+            "20": "E_OS_SPINLOCK",
+            "21": "E_OS_INTERFERENCE_DEADLOCK",
+            "22": "E_OS_NESTING_DEADLOCK",
+            "23": "E_OS_SYS_NO_RESTART",
+            "24": "E_OS_SYS_RESTART",
+            "25": "E_OS_SYS_OVERRUN",
+            "26": "E_OS_XCORE_QFULL",
+            "0": "E_OK"
+          }
+        },
+        "RUNNINGTASK": {
+          "description": "Running Task",
+          "type": "map",
+          "values": {
+            "Os_const_tasks[0]": "LowPriority",
+            "Os_const_tasks[1]": "HighPriority",
+            "0": "idle"
+          }
+        },
+        "RUNNINGTASKPRIORITY": {
+          "description": "Task priority",
+          "type": "map",
+          "values": {
+            "1": "TPL 1",
+            "0": "idle"
+          }
+        },
+        "RUNNINGISR2": {
+          "description": "Running Cat 2 ISR",
+          "type": "map",
+          "values": {
+            "&Os_const_isrs[0]": "Millisecond",
+            "0": "NO_ISR"
+          }
+        }
+      },
+      "events": {
+        "APPLICATION": {
+          "description": "AUTOSAR OS Application change",
+          "values": {
+            "1": "Application0",
+            "2": "Application1",
+            "0": "NO_APPLICATION"
+          }
+        },
+        "ERROR": {
+          "description": "AUTOSAR Error code raised",
+          "values": {
+            "1": "E_OS_ACCESS",
+            "2": "E_OS_CALLEVEL",
+            "3": "E_OS_ID",
+            "4": "E_OS_LIMIT",
+            "5": "E_OS_NOFUNC",
+            "6": "E_OS_RESOURCE",
+            "7": "E_OS_STATE",
+            "8": "E_OS_VALUE",
+            "9": "E_OS_SERVICEID",
+            "10": "E_OS_ILLEGAL_ADDRESS",
+            "11": "E_OS_MISSINGEND",
+            "12": "E_OS_DISABLEDINT",
+            "13": "E_OS_STACKFAULT",
+            "14": "E_OS_PROTECTION_MEMORY",
+            "15": "E_OS_PROTECTION_TIME",
+            "16": "E_OS_PROTECTION_ARRIVAL",
+            "17": "E_OS_PROTECTION_LOCKED",
+            "18": "E_OS_PROTECTION_EXCEPTION",
+            "19": "E_OS_CORE",
+            "20": "E_OS_SPINLOCK",
+            "21": "E_OS_INTERFERENCE_DEADLOCK",
+            "22": "E_OS_NESTING_DEADLOCK",
+            "23": "E_OS_SYS_NO_RESTART",
+            "24": "E_OS_SYS_RESTART",
+            "25": "E_OS_SYS_OVERRUN",
+            "26": "E_OS_XCORE_QFULL",
+            "0": "E_OK"
+          }
+        },
+        "TRUSTED_FUNCTION_START": {
+          "description": "Start of a trusted function",
+          "values": {
+            "0": "TODO"
+          }
+        },
+        "TRUSTED_FUNCTION_STOP": {
+          "description": "Stop of a trusted function",
+          "values": {
+            "0": "TODO"
+          }
+        },
+        "TASK_ACTIVATE": {
+          "description": "AUTOSAR Task activate",
+          "values": {
+            "0": "LowPriority",
+            "1": "HighPriority"
+          }
+        },
+        "TASK_START": {
+          "description": "AUTOSAR Task start",
+          "values": {
+            "0": "LowPriority",
+            "1": "HighPriority"
+          }
+        },
+        "TASK_WAIT": {
+          "description": "AUTOSAR Task wait",
+          "values": {
+            "0": "LowPriority",
+            "1": "HighPriority"
+          }
+        },
+        "TASK_RESUME": {
+          "description": "AUTOSAR Task resume from wait",
+          "values": {
+            "0": "LowPriority",
+            "1": "HighPriority"
+          }
+        },
+        "TASK_STOP": {
+          "description": "AUTOSAR Task completion",
+          "values": {
+            "0": "LowPriority",
+            "1": "HighPriority"
+          }
+        },
+        "ISR2_START": {
+          "description": "AUTOSAR Category 2 start",
+          "values": {
+            "0": "Millisecond"
+          }
+        },
+        "ISR2_STOP": {
+          "description": "AUTOSAR Category 2 completion",
+          "values": {
+            "0": "Millisecond"
+          }
+        }
+      },
+      "constants": {
+        "PhysicalCore": {
+          "description": "Core number",
+          "type": "string"
+        }
+      },
+      "description": "This is (will be) the class specified by AUTOSAR to describe a single core managed by an AUTOSAR OS.\nThere will normally be one or more AR_COREs. Non-AUTOSAR cores that are started be the AUTOSAR OS can be described using classes that are relevant to themselves.\n"
+    },
+    "RTAOS_CORE": {
+      "states": {
+        "RUNNINGISR1": {
+          "description": "Running Cat 1 ISR",
+          "type": "map",
+          "values": {
+            "0": "NO_ISR"
+          }
+        }
+      },
+      "events": {
+        "ISR1_START": {
+          "description": "AUTOSAR Category 1 start",
+          "values": {
+
+          }
+        },
+        "ISR1_STOP": {
+          "description": "AUTOSAR Category 1 completion",
+          "values": {
+
+          }
+        }
+      },
+      "description": "This class describes the RTA-OS extensions to AR_CORE.\n"
+    },
+    "AR_TASK": {
+      "states": {
+        "ACTIVATIONS": {
+          "description": "Number of activations",
+          "type": "unsigned char"
+        },
+        "STATE": {
+          "description": "Task State",
+          "type": "map",
+          "values": {
+            "0": "SUSPENDED",
+            "1": "RUNNING",
+            "2": "READY",
+            "3": "RUNNING",
+            "4": "WAITING",
+            "5": "RUNNING",
+            "6": "READY",
+            "7": "RUNNING"
+          }
+        }
+      },
+      "constants": {
+        "Priority": {
+          "description": "Task Dispatch Priority",
+          "type": "string"
+        },
+        "PhysicalCore": {
+          "description": "Core Task runs on",
+          "type": "string"
+        }
+      },
+      "description": "This is (will be) the class specified by AUTOSAR to describe a TASK.\nEvents that are task-related at attached to the OS, because it is the OS that does the scheduling.\n"
+    },
+    "RTAOS_TASK": {
+      "states": {
+        "Stack0Max": {
+          "description": "Max usage on stack 0",
+          "type": "unsigned"
+        },
+        "Stack1Max": {
+          "description": "Max usage on stack 1",
+          "type": "unsigned"
+        }
+      },
+      "constants": {
+        "BasePriority": {
+          "description": "Task Base Priority",
+          "type": "string"
+        },
+        "PhysicalCore": {
+          "description": "Core Task runs on",
+          "type": "string"
+        }
+      },
+      "description": "This describes the RTA-OS extensions to an AR_TASK.\n"
+    },
+    "AR_ISR2": {
+      "constants": {
+        "PhysicalCore": {
+          "description": "Core ISR2 runs on",
+          "type": "string"
+        }
+      },
+      "description": "This is (will be) the class specified by AUTOSAR to describe a Category 2 ISR.\n"
+    },
+    "RTAOS_ISR2": {
+      "states": {
+        "Stack0Max": {
+          "description": "Max usage on stack 0",
+          "type": "unsigned integer"
+        },
+        "Stack1Max": {
+          "description": "Max usage on stack 1",
+          "type": "unsigned integer"
+        }
+      },
+      "constants": {
+        "Priority": {
+          "description": "ISR2 Dispatch Priority",
+          "type": "unsigned integer"
+        },
+        "BasePriority": {
+          "description": "ISR2 Base Priority",
+          "type": "text"
+        }
+      },
+      "description": "This describes the RTA-OS extensions to an AR_ISR2.\n"
+    },
+    "RTAOS_ISR1": {
+      "constants": {
+        "Priority": {
+          "description": "ISR1 Dispatch Priority",
+          "type": "unsigned integer"
+        },
+        "BasePriority": {
+          "description": "ISR1 Base Priority",
+          "type": "text"
+        },
+        "PhysicalCore": {
+          "description": "Core ISR1 runs on",
+          "type": "string"
+        }
+      },
+      "description": "This describes the RTA-OS Category 1 ISR.\n"
+    },
+    "AR_ALARM": {
+      "states": {
+        "STATE": {
+          "description": "Alarm state",
+          "type": "map",
+          "values": {
+            "0": "STOPPED",
+            "1": "RUNNING"
+          }
+        },
+        "ALARMTIME": {
+          "description": "Alarm Time",
+          "type": "unsigned integer"
+        },
+        "CYCLETIME": {
+          "description": "Cycle Time",
+          "type": "unsigned integer"
+        }
+      },
+      "constants": {
+        "COUNTER": {
+          "description": "Alarm counter",
+          "type": "map",
+          "values": {
+
+          }
+        },
+        "ACTION": {
+          "description": "Action taken by alarm",
+          "type": "string"
+        },
+        "PhysicalCore": {
+          "description": "Core Task runs on",
+          "type": "string"
+        }
+      },
+      "events": {
+        "FIRE": {
+          "description": "AUTOSAR ALARM occurs",
+          "values": {
+            "0": "Alarm25ms",
+            "1": "Alarm50ms"
+          }
+        }
+      },
+      "description": "This is (will be) the class specified by AUTOSAR to describe an ALARM.\n"
+    },
+    "AR_SCHEDULETABLE": {
+      "states": {
+        "STATE": {
+          "description": "ScheduleTable state",
+          "type": "map",
+          "values": {
+            "0": "STOPPED",
+            "1": "NEXT",
+            "2": "WAITING",
+            "3": "RUNNING",
+            "4": "RUNNING_AND_SYNCHRONOUS"
+          }
+        },
+        "EXPIRYTIME": {
+          "description": "Expiry time",
+          "type": "unsigned"
+        },
+        "NEXT": {
+          "description": "Next ScheduleTable",
+          "type": "map",
+          "values": {
+            "0": "none"
+          }
+        }
+      },
+      "constants": {
+        "COUNTER": {
+          "description": "ScheduleTable counter",
+          "type": "map",
+          "values": {
+
+          }
+        },
+        "PhysicalCore": {
+          "description": "Core Task runs on",
+          "type": "string"
+        }
+      },
+      "events": {
+        "FIRE": {
+          "description": "AUTOSAR ScheduleTable event occurs",
+          "values": {
+            "0": "TODO"
+          }
+        }
+      },
+      "description": "This is (will be) the class specified by AUTOSAR to describe an AUTOSAR ScheduleTable.\n"
+    },
+    "AR_RESOURCE": {
+      "states": {
+        "STATE": {
+          "description": "Resource state",
+          "type": "map",
+          "values": {
+            "0": "LOCKED",
+            "1": "UNLOCKED"
+          }
+        },
+        "LOCKER": {
+          "description": "Locker of the resource",
+          "type": "map",
+          "values": {
+            "Os_const_tasks[0]": "LowPriority",
+            "Os_const_tasks[1]": "HighPriority",
+            "&Os_const_isrs[0]": "Millisecond",
+            "0": "none"
+          }
+        }
+      },
+      "constants": {
+        "Priority": {
+          "description": "Ceiling priority",
+          "type": "string"
+        },
+        "PhysicalCore": {
+          "description": "Core Task runs on",
+          "type": "string"
+        }
+      },
+      "description": "This is (will be) the class specified by AUTOSAR to describe an AUTOSAR Resource.\n"
+    },
+    "AR_SPINLOCK": {
+      "states": {
+        "STATE": {
+          "description": "Spinlock state",
+          "type": "map",
+          "values": {
+            "0": "UNLOCKED",
+            "1": "LOCKED"
+          }
+        },
+        "CORE": {
+          "description": "Core locking the spinlock",
+          "type": "map",
+          "values": {
+            "0": "None",
+            "&Os_ControlledCoreInfo[0U]": "0",
+            "&Os_ControlledCoreInfo[1U]": "1"
+          }
+        }
+      },
+      "description": "This is (will be) the class specified by AUTOSAR to describe an AUTOSAR Spinlock.\n"
+    },
+    "RTE_Wiper_SWC": {
+      "states": {
+        "WiperPosition": {
+          "description": "Position of wiper",
+          "type": "map",
+          "values": {
+            "0": "Rest",
+            "12": "12 degrees",
+            "24": "24 degrees",
+            "36": "36 degrees",
+            "48": "48 degrees",
+            "60": "60 degrees",
+            "72": "72 degrees",
+            "84": "84 degrees",
+            "96": "96 degrees",
+            "108": "108 degrees",
+            "120": "120 degrees",
+            "132": "132 degrees",
+            "144": "144 degrees",
+            "156": "156 degrees",
+            "168": "168 degrees",
+            "180": "Full"
+          }
+        },
+        "WiperState": {
+          "description": "State of wiper",
+          "type": "map",
+          "values": {
+            "0": "OFF",
+            "1": "WIPING"
+          }
+        }
+      },
+      "events": {
+        "WiperPosition": {
+          "description": "Position of wiper",
+          "values": {
+            "0": "Rest",
+            "1": "12 degrees",
+            "2": "24 degrees",
+            "3": "36 degrees",
+            "4": "48 degrees",
+            "5": "60 degrees",
+            "6": "72 degrees",
+            "7": "84 degrees",
+            "8": "96 degrees",
+            "9": "108 degrees",
+            "10": "120 degrees",
+            "11": "132 degrees",
+            "12": "144 degrees",
+            "13": "156 degrees",
+            "14": "168 degrees",
+            "15": "Full"
+          }
+        },
+        "WiperState": {
+          "description": "Wiper state change",
+          "values": {
+            "0": "OFF",
+            "1": "WIPING"
+          }
+        }
+      }
+    }
+  },
+  "$Instances": {
+    "ADifferent": {
+      "classes": [
+        "ADIFFERENT"
+      ],
+      "states": {
+        "RUNNINGBLOB": {
+          "evaluate": "Os_RunningBlob"
+        }
+      }
+    },
+    "AModule1": {
+      "classes": [
+        "AMODULE"
+      ],
+      "states": {
+        "RUNNINGTHING": {
+          "evaluate": "First_RunningThing"
+        }
+      }
+    },
+    "AModule2": {
+      "classes": [
+        "AMODULE"
+      ],
+      "states": {
+        "RUNNINGTHING": {
+          "evaluate": "Second_RunningThing"
+        }
+      }
+    },
+    "HelloWorld": {
+      "classes": [
+        "AR_OS"
+      ],
+      "states": {
+        "CURRENTAPPMODE": {
+          "evaluate": "Os_CurrentAppMode"
+        }
+      },
+      "constants": {
+        "NumberOfCores": 2
+      }
+    },
+    "Core0_HelloWorld": {
+      "classes": [
+        "AR_CORE",
+        "RTAOS_CORE"
+      ],
+      "states": {
+        "CURRENTAPPLICATION": {
+          "evaluate": "(((0 != Os_ControlledCoreInfo[0U].RunningISR) ? Os_ControlledCoreInfo[0U].RunningISR->application : ((0 != Os_ControlledCoreInfo[0U].RunningTask) ? Os_ControlledCoreInfo[0U].RunningTask->application : 0) ))"
+        },
+        "LASTERROR": {
+          "evaluate": "Os_AnyCoreInfo[0].OrtiLastError"
+        },
+        "RUNNINGTASK": {
+          "evaluate": "Os_ControlledCoreInfo[0U].RunningTask"
+        },
+        "RUNNINGTASKPRIORITY": {
+          "evaluate": "Os_ControlledCoreInfo[0U].RunningTPMask.t0"
+        },
+        "RUNNINGISR1": {
+          "evaluate": "Os_RunningCat1ISR0"
+        },
+        "RUNNINGISR2": {
+          "evaluate": "Os_ControlledCoreInfo[0U].RunningISR"
+        }
+      },
+      "constants": {
+        "PhysicalCore": "0"
+      }
+    },
+    "Core1_HelloWorld": {
+      "classes": [
+        "AR_CORE",
+        "RTAOS_CORE"
+      ],
+      "states": {
+        "CURRENTAPPLICATION": {
+          "evaluate": "(((0 != Os_ControlledCoreInfo[1U].RunningISR) ? Os_ControlledCoreInfo[1U].RunningISR->application : ((0 != Os_ControlledCoreInfo[1U].RunningTask) ? Os_ControlledCoreInfo[1U].RunningTask->application : 0) ))"
+        },
+        "LASTERROR": {
+          "evaluate": "Os_AnyCoreInfo[1].OrtiLastError"
+        },
+        "RUNNINGTASK": {
+          "evaluate": "Os_ControlledCoreInfo[1U].RunningTask"
+        },
+        "RUNNINGTASKPRIORITY": {
+          "evaluate": "Os_ControlledCoreInfo[1U].RunningTPMask.t1"
+        },
+        "RUNNINGISR1": {
+          "evaluate": "Os_RunningCat1ISR1"
+        },
+        "RUNNINGISR2": {
+          "evaluate": "Os_ControlledCoreInfo[1U].RunningISR"
+        }
+      },
+      "constants": {
+        "PhysicalCore": "1"
+      }
+    },
+    "LowPriority": {
+      "classes": [
+        "AR_TASK",
+        "RTAOS_TASK"
+      ],
+      "states": {
+        "ACTIVATIONS": {
+          "evaluate": "((Os_ControlledCoreInfo[0U].ReadyTasks.p0 & 0x1) << 1) >> 1"
+        },
+        "STATE": {
+          "evaluate": "(((Os_ControlledCoreInfo[0U].RunningTask == Os_const_tasks[0]) * 1) & 1) + ((Os_ControlledCoreInfo[0U].ReadyTasks.p0 & 0x1) << 1)"
+        },
+        "Stack0Max": {
+          "evaluate": "Os_dyn_tasks[0].meter.stackmax.sp"
+        },
+        "Stack1Max": {
+          "evaluate": "Os_dyn_tasks[0].meter.stackmax.ctx"
+        }
+      },
+      "constants": {
+        "BasePriority": "1",
+        "Priority": "1",
+        "PhysicalCore": "0"
+      }
+    },
+    "HighPriority": {
+      "classes": [
+        "AR_TASK",
+        "RTAOS_TASK"
+      ],
+      "states": {
+        "ACTIVATIONS": {
+          "evaluate": "((Os_ControlledCoreInfo[1U].ReadyTasks.p1 & 0x1) << 1) >> 1"
+        },
+        "STATE": {
+          "evaluate": "(((Os_ControlledCoreInfo[1U].RunningTask == Os_const_tasks[1]) * 1) & 1) + ((Os_ControlledCoreInfo[1U].ReadyTasks.p1 & 0x1) << 1)"
+        },
+        "Stack0Max": {
+          "evaluate": "Os_dyn_tasks[1].meter.stackmax.sp"
+        },
+        "Stack1Max": {
+          "evaluate": "Os_dyn_tasks[1].meter.stackmax.ctx"
+        }
+      },
+      "constants": {
+        "BasePriority": "2",
+        "Priority": "1",
+        "PhysicalCore": "1"
+      }
+    },
+    "Millisecond": {
+      "classes": [
+        "AR_ISR2",
+        "RTAOS_ISR2"
+      ],
+      "states": {
+        "Stack0Max": {
+          "evaluate": "Os_dyn_isrs[0].meter.stackmax.sp"
+        },
+        "Stack1Max": {
+          "evaluate": "Os_dyn_isrs[0].meter.stackmax.ctx"
+        }
+      },
+      "constants": {
+        "BasePriority": "1",
+        "Priority": "1",
+        "PhysicalCore": "0"
+      }
+    },
+    "Alarm25ms": {
+      "classes": [
+        "AR_ALARM"
+      ],
+      "states": {
+        "STATE": {
+          "evaluate": "Os_dyn_alarms[0].running"
+        },
+        "ALARMTIME": {
+          "evaluate": "Os_dyn_alarms[0].match"
+        },
+        "CYCLETIME": {
+          "evaluate": "Os_dyn_alarms[0].period"
+        }
+      },
+      "constants": {
+        "COUNTER": "MillisecondCounter",
+        "ACTION": "Activate LowPriority",
+        "PhysicalCore": "0"
+      }
+    },
+    "Alarm50ms": {
+      "classes": [
+        "AR_ALARM"
+      ],
+      "states": {
+        "STATE": {
+          "evaluate": "Os_dyn_alarms[1].running"
+        },
+        "ALARMTIME": {
+          "evaluate": "Os_dyn_alarms[1].match"
+        },
+        "CYCLETIME": {
+          "evaluate": "Os_dyn_alarms[1].period"
+        }
+      },
+      "constants": {
+        "COUNTER": "MillisecondCounter",
+        "ACTION": "Activate HighPriority",
+        "PhysicalCore": "0"
+      }
+    },
+    "Serializer": {
+      "classes": [
+        "AR_SPINLOCK"
+      ],
+      "states": {
+        "STATE": {
+          "evaluate": "Os_dyn_spinlocks[0].lock"
+        },
+        "CORE": {
+          "evaluate": "Os_dyn_spinlocks[0].core"
+        }
+      }
+    },
+    "Wiper": {
+      "classes": [
+        "RTE_Wiper_SWC"
+      ],
+      "states": {
+        "WiperPosition": {
+          "evaluate": "WiperPosition"
+        },
+        "WiperState": {
+          "evaluate": "WiperActive"
+        }
+      }
+    }
+  }
+}

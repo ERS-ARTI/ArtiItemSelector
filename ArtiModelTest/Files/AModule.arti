@@ -1,0 +1,64 @@
+{
+  "$Meta": {
+    "schema": "URL_to_schema_version",
+    "description": "ARTI description for project 'Hello World'",
+    "generator": "AModule version 0.0.0",
+    "date": "Mon Feb 06 14:12:44 +0000 2017",
+    "includes": [
+      "AModule.h"
+    ],
+    "arxml_sources": [
+
+    ],
+    "code_sources": [
+
+    ]
+  },
+  "$Classes": {
+    "AMODULE": {
+      "states": {
+        "RUNNINGTHING": {
+          "description": "Running Thing",
+          "type": "map",
+          "values": {
+            "0": "NO_THING",
+            "1": "A_THING",
+            "2": "ANOTHER_THING"
+          }
+        }
+      },
+      "events": {
+        "THING_START": {
+          "description": "Thing start",
+          "type": "map",
+          "values": {
+            "1": "A_THING",
+            "2": "ANOTHER_THING"
+          }
+        }
+      }
+    }
+  },
+  "$Instances": {
+    "AModule1": {
+      "classes": [
+        "AMODULE"
+      ],
+      "states": {
+        "RUNNINGTHING": {
+          "evaluate": "First_RunningThing"
+        }
+      }
+    },
+    "AModule2": {
+      "classes": [
+        "AMODULE"
+      ],
+      "states": {
+        "RUNNINGTHING": {
+          "evaluate": "Second_RunningThing"
+        }
+      }
+    }
+  }
+}
