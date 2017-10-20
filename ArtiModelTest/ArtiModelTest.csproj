@@ -54,7 +54,7 @@
     <EmbeddedResource Include="Files\SystemDescription.arti" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xModel\xModel.csproj">
+    <ProjectReference Include="..\ArtiModel\ArtiModel.csproj">
       <Project>{43ed3c17-3cb9-45d5-890d-0e69333e2bda}</Project>
       <Name>xModel</Name>
     </ProjectReference>

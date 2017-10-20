@@ -95,7 +95,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xModel\xModel.csproj">
+    <ProjectReference Include="..\ArtiModel\ArtiModel.csproj">
       <Project>{43ED3C17-3CB9-45D5-890D-0E69333E2BDA}</Project>
       <Name>xModel</Name>
     </ProjectReference>
